@@ -29,16 +29,37 @@ function itemInit(){
     nextGenerate()
     prevGenerate()
 }
+function select(){
+    if(this.attr>activeItem){
+       
+        for(var i=Math.abs(this.attr-activeItem)-1;i>=0;i--){
+            
+            console.log(i)   
+            nextSlide()
+         handlerClick=true
+    
+        }
+ 
+    }else
+    for(var i=Math.abs(this.attr-activeItem)-1;i>=0;i--){   
+        pervSlide()
+     handlerClick=true
+
+    }
+}
 
 function dotsInit(){
     for(let i=0;i<images.length;i++){
 
         const dot=document.createElement('div')
         dot.className="slider__dot"
+        dot.attr=i
+        dot.addEventListener("click",select)
         dots.append(dot)
 
     }
-}
+    
+    indicators()}
 itemInit()
 dotsInit()
 
@@ -65,6 +86,7 @@ function prevGenerate(){
     const img=document.createElement('img')
     img.style.width="400px";
     img.style.height="400px";
+
     img.src='./img/'+images[prevItem]
     sliderItems.prepend(img)
 }
@@ -72,6 +94,7 @@ function prevGenerate(){
 
 
 function nextSlide(){
+
 
     if(handlerClick){
         activeItem++
@@ -82,19 +105,22 @@ function nextSlide(){
   
     right()
     nextGenerate()
+    indicators();
+
     }
     }
 
     function pervSlide(){
         if(handlerClick){
-        console.log(activeItem)
         activeItem--
         if(activeItem<0){
             activeItem=images.length-1
         }
         document.querySelector('.slider__items img:last-child').remove()
+        
         left()
         prevGenerate()
+        indicators()
     }
         }
 
@@ -103,7 +129,7 @@ function right(){
 
     const elem = document.querySelector('.slider__items');
     let pos = 0;
-    const id = setInterval(frame, 1); 
+    const id = setInterval(frame, 5); 
 
     function frame (){ 
     if (pos == 400) {
@@ -111,7 +137,7 @@ function right(){
         handlerClick=true
 
     } else {
-        pos+=2; 
+        pos+=5; 
         elem.style.left =  -pos + 'px'; 
     }
     }
@@ -126,11 +152,23 @@ function left(){
     if (pos == 400) {
         clearInterval(id);
         handlerClick=true
+
+        
     } else {
-        pos-=2; // позиция увеличивается.
+        pos-=5; // позиция увеличивается.
         elem.style.left =   -pos + 'px'; 
     }
     }
+}
+
+
+function indicators(){
+    let doters=document.querySelectorAll('.slider__dot')
+    for(i = 0; i < doters.length; i++){
+        doters[i].className = doters[i].className.replace(' active', '');
+    }
+
+    doters[activeItem].className += ' active';
 }
 
 
