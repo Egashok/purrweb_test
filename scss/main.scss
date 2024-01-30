@@ -16,9 +16,13 @@ section{
     outline: none;
     margin: 0;
 }
+.hide{
+    display: none;
+}
 .container {
     max-width: 1320px;
     margin: 0 auto;
+    padding: 0 60px;
 }
 .contact__btn{
     border: none;
@@ -96,6 +100,7 @@ border-radius: 20px 20px 0px 0px;
         justify-content: space-between;
         margin-top: 7px;
         margin-bottom: 75px;
+    
     }
     &__title {
         text-align: start;
@@ -123,11 +128,33 @@ border-radius: 20px 20px 0px 0px;
     }
     &__bottom {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+   
+    }
+    &__container{
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+    &__content{
+        margin-left: 50px;
     }
 }
 
 .about{
+    &__text{
+        z-index: 4;
+    }
+    &__container{
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    &__payment{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+   
     &__title{
         text-align: start;
         color: var(--Grayscale-07, #FFF);
@@ -140,23 +167,41 @@ font-weight: 700;
 line-height: 106%; 
     }
     &__item{
-        max-width: 336px;
+        max-width: 321px;
         text-align: left;
     }
-    &__incline{
+    &__text{
+        position: relative;
+        color: var(--Grayscale-07, #FFF);
+        text-align: center;
+        
+        /* Subtitle/S1_SemiBold_36 */
+        font-family: Outfit;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
         display: inline-block;
-        
-        position: absolute;
-        border-radius: 30px;
-background: var(--Primary-02, #A64CED);
-width: 353.394px;
-height: 34.438px;
-margin-left: 2px;
-
-transform: rotate(-1.693deg);
-flex-shrink: 0;
-        
+        z-index: 2;
     }
+    &__text::after{
+        z-index:-1;
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 333.394px;
+        height: 34.438px;
+        transform: rotate(-1.693deg);
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: var(--Primary-02, #A64CED);
+        margin-top: 3px;
+        -webkit-text-stroke: 2px #e74c3c; /* Ширина и цвет обводки текста для веб-кит браузеров (Chrome, Safari) */
+        
+    
+    }
+
     &__description{
         display: block;
         max-width: 397px;
@@ -202,6 +247,8 @@ margin-bottom: 20px;
     &__wrap{
         display: flex;
         justify-content: space-between;
+        max-width: 1320px;
+        padding:0 60px;
     }
     &__content{
         display: flex;
@@ -215,6 +262,10 @@ margin-bottom: 20px;
     &__item:last-child{
         margin-bottom: 36px;
     }
+    &__logo{
+        position: relative;
+        left:-60px;
+    }
 }
 .how{
 &__phone{
@@ -226,6 +277,7 @@ margin-bottom: 20px;
 
 
 .result{
+    text-align: start;
     padding: 40px 0;
     background: var(--Primary-01, #954CED);
     &__items{
@@ -266,6 +318,7 @@ line-height: 120%; /* 28.8px */
 }
 
 .why {
+    padding-top: 100px;
     background-color: #181818;
     display: flex;
     flex-direction: column;
@@ -275,7 +328,7 @@ line-height: 120%; /* 28.8px */
     &__title {
     color: var(--Grayscale-07, #fff);
     font-feature-settings: "liga" off;
-
+        margin-bottom: 20px;
     font-family: Outfit;
     font-size: 64px;
     font-style: normal;
@@ -301,6 +354,44 @@ line-height: 120%; /* 28.8px */
     flex-shrink: 0;
     border-radius: 30px;
     background: var(--Primary-02, #a64ced);
+    
+}
+
+&__incline--text{
+    position: relative;
+    color: var(--Grayscale-07, #FFF);
+    text-align: center;
+    
+    /* Subtitle/S1_SemiBold_36 */
+    font-family: Outfit;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: inline-block;
+    z-index: 2;
+    margin-top: 5px;
+    margin-bottom: 70px;
+
+}
+&__incline--text::after{
+    
+    z-index:-1;
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 386.483px;
+    height: 34.438px;
+    transform: rotate(-1.631deg);
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: var(--Primary-02, #A64CED);
+    margin-top: 3px;
+    -webkit-text-stroke: 2px #e74c3c; /* Ширина и цвет обводки текста для веб-кит браузеров (Chrome, Safari) */
+
+    
+
 }
 &__items {
     display: flex;
@@ -373,9 +464,11 @@ line-height: 106%; /* 67.84px */
         margin-right: 0px;
     }
     &__text{
-      
+      text-align: start;
     }
     &__title{
+        text-align: start;
+
         max-width: 822px;
         color: var(--Grayscale-00, #000);
 font-feature-settings: 'liga' off;
@@ -414,6 +507,7 @@ line-height: 120%; /* 24px */
 }
 &__btn:not(:last-child){
     margin-right: 40px;
+    height: 57px;
 }
 &__client:last-child{
     margin-left: 40px;
@@ -427,7 +521,11 @@ line-height: 120%; /* 24px */
     background-color: #fff;
     &__items{
         display: flex;
+        align-items: center;
         justify-content: space-between;
+    }
+    &__img{
+        height: 100%;
     }
 
 }
@@ -447,5 +545,155 @@ justify-content: space-between;
 border-top: 2px solid #444;
 &__item{
     margin-left: 20px;
+    color: var(--Grayscale-03, #B9B9B9);
+text-align: right;
+
+/* Body/B6_Light_14_Underline */
+font-family: Outfit;
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: 140%; /* 19.6px */
+text-decoration-line: underline;
 }
+}
+
+.modal{
+    position: relative;
+    &__form{
+        margin: 0 auto;
+
+    display: flex;
+    width: 337px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: #fff;
+    color: black;
+    padding: 40px;
+    border-radius: 20px;
+background: var(--Grayscale-07, #FFF);
+    }
+    &__label{
+        color: var(--Grayscale-Black, #070707);
+
+/* Body/B3_Medium_14 */
+font-family: Outfit;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 22px; /* 157.143% */
+    }
+    &__input{
+        border-radius: 14px;
+        border: 1px solid var(--Grayscale-20, #F1F1F1);
+        background: var(--Grayscale-07, #FFF);
+display: flex;
+height: 40px;
+padding: 0px 16px;
+align-items: center;
+gap: 10px;
+align-self: stretch;
+    }
+ &__close{
+    margin-left: auto;
+
+    cursor: pointer;
+ }
+ &__required{
+    color: var(--Additional-01, #FF6C2D);
+
+/* Body/B3_Medium_14 */
+font-family: Outfit;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 22px;
+ }
+ &__text{
+    color: var(--Grayscale-00, #000);
+
+/* Body/B5_Light_14 */
+font-family: Outfit;
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: 140%; /* 19.6px */
+    text-align: start;
+    margin: 20px 0;
+ }
+ &__link{
+    color: var(--Primary-02, #A64CED);
+
+/* Body/B6_Light_14_Underline */
+font-family: Outfit;
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: 140%;
+text-decoration-line: underline;
+ }
+ &__btn{
+    border-radius: 16px;
+    background: var(--Grayscale-03, #B9B9B9); }
+
+}
+.cookies{
+    display: flex;
+    border-radius: 16px;
+background: var(--Grayscale-07, #FFF);
+position: absolute;
+
+box-shadow: -10px -5px 30px 0px rgba(141, 141, 141, 0.10);
+    max-width: 1285px;
+    padding: 30px;
+    align-items: center;
+    gap: 140px;
+    background-color: #fff;
+    justify-content: space-between;
+
+    &__text{
+        color: var(--Grayscale-Dark-grey, #383838);
+
+/* Subtitle/S7_Light_20 */
+font-family: Outfit;
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: 140%; /* 28px */
+text-align: start;
+    }
+    &__btns{
+        display: flex;
+    }
+    &__btn{
+        cursor: pointer;
+        border: none;
+        display: flex;
+        padding: 16px 30px;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        border-radius: 16px;
+        background: var(--Primary-01, #fff );
+        color: var(--Grayscale-07, #954ced);
+        border-radius: 16px;
+        border: 2px solid var(--Primary-01, #954CED); 
+        color: var(--Grayscale-00, #000);
+        font-family: Outfit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;  
+        margin-left: 20px;
+    }
+    &__close{
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: auto;
+     }
+ 
+ 
 }
