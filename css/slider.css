@@ -7,10 +7,21 @@
     text-align: center;
     margin: 0 auto;
 }
-.slider{
+.slider__dot{
+    width: 25px;
+    height: 25px;
+    background-color: orange;
+    border-radius: 50%;
 
 }
+.slider__dots{
+    max-width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 50px;
 
+}
 .slider__item{
     width: 400px;
     height: 400px;
@@ -18,6 +29,7 @@
 .slider__btn{
 display: inline-block;
 vertical-align: middle;
+margin-top: 30px;
 }
 .slider__items{
     display: flex;
@@ -27,6 +39,5 @@ vertical-align: middle;
 .slider__screen{
     display: flex;
     width: 400px;
-    overflow: hidden;
 margin: 0 auto;
 }
