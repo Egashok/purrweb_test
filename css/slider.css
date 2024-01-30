@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    max-width: 1440px;
+    text-align: center;
+    margin: 0 auto;
+}
+.slider{
+
+}
+
+.slider__item{
+    width: 400px;
+    height: 400px;
+}
+.slider__btn{
+display: inline-block;
+vertical-align: middle;
+}
+.slider__items{
+    display: flex;
+    position: relative;
+    left: -400px;
+}
+.slider__screen{
+    display: flex;
+    width: 400px;
+    overflow: hidden;
+margin: 0 auto;
+}
