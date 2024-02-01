@@ -2,10 +2,6 @@ images=[]
 
 const sliderItems=document.querySelector('.slider__items')
 
-
-const sliderDots=document.querySelector('.slider__dots')
-
-
 const prevBtn=document.querySelector('.btn__prev')
 const nextBtn=document.querySelector('.btn__next')
 const dots=document.querySelector('.slider__dots')
@@ -14,20 +10,17 @@ let activeItem=0
 let handlerClick=true   
 let dotsIndex=0
 
+
 function itemInit(){
     for(var i of  Array.from(sliderItems.children))
 {
         images.push(i.src.split('img/')[1])
 
-    }
-    const img=document.createElement('img')
-    img.src='./img/'+images[activeItem]
-    img.style.width="400px";
-    img.style.height="400px";
+    }  
 
-    sliderItems.append(img)
-    nextGenerate()
-    prevGenerate()
+ 
+    
+
 }
 function select(){
     if(this.attr>activeItem){
@@ -49,6 +42,7 @@ function select(){
 }
 
 function dotsInit(){
+
     for(let i=0;i<images.length;i++){
 
         const dot=document.createElement('div')
@@ -58,8 +52,9 @@ function dotsInit(){
         dots.append(dot)
 
     }
-    
-    indicators()}
+   
+
+indicators()}
 itemInit()
 dotsInit()
 
@@ -67,14 +62,10 @@ dotsInit()
 
 
 function nextGenerate(){
-    let nextItem =activeItem+1
-    if(nextItem>=images.length){
-        nextItem=0
-    }
     const img=document.createElement('img')
-    img.src='./img/'+images[nextItem]
+    img.src='./img/'+images[activeItem]
     img.className="slider__item";
-
+    
     sliderItems.append(img)
 
 }
@@ -84,7 +75,7 @@ function prevGenerate(){
         prevItem=images.length-1
     }
     const img=document.createElement('img')
-    img.style.width="400px";
+    img.style.width="0";
     img.style.height="400px";
 
     img.src='./img/'+images[prevItem]
@@ -97,14 +88,15 @@ function nextSlide(){
 
 
     if(handlerClick){
+        
         activeItem++
     if(activeItem>=images.length){
         activeItem=0
     }
-    document.querySelector('.slider__items img').remove()
-  
-    right()
+   
     nextGenerate()
+
+    right()
     indicators();
 
     }
@@ -116,10 +108,8 @@ function nextSlide(){
         if(activeItem<0){
             activeItem=images.length-1
         }
-        document.querySelector('.slider__items img:last-child').remove()
-        
-        left()
         prevGenerate()
+        left()
         indicators()
     }
         }
@@ -127,36 +117,43 @@ function nextSlide(){
 function right(){
     handlerClick=false
 
-    const elem = document.querySelector('.slider__items');
     let pos = 0;
     const id = setInterval(frame, 5); 
+    let del= document.querySelector('.slider__items img')
+   
 
     function frame (){ 
     if (pos == 400) {
         clearInterval(id);
         handlerClick=true
+       del.remove()
+
 
     } else {
         pos+=5; 
-        elem.style.left =  -pos + 'px'; 
+
+        del.style.width=(400-pos)+'px'
+
     }
     }
 }
 function left(){
     handlerClick=false
-    const elem = document.querySelector('.slider__items');
-    let pos = 800;
+    let elem=document.querySelector('.slider__items img')   
+     let pos = 400;
     const id = setInterval(frame, 1); 
+    let del=document.querySelector('.slider__items img:last-child')
 
     function frame (){ 
-    if (pos == 400) {
+  
+    if (pos == 0) {
         clearInterval(id);
         handlerClick=true
-
-        
+        del.remove()     
+          
     } else {
-        pos-=5; // позиция увеличивается.
-        elem.style.left =   -pos + 'px'; 
+        pos-=5;
+        elem.style.width=400-pos+'px'
     }
     }
 }
