@@ -8,38 +8,41 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container hide">
-        <div class="cookies hide">
-            <p class="cookies__text">
+
+        <div class="cookies ">
+          <div class="cookies__content">
+              <p class="cookies__text">
                 This website uses cookies to ensure you get the best experience on our website.
                 They also allow us to analyze user behavior in order to constantly improve the website for you.
             </p>
             <div class="cookies__btns">
-                <button  class="contact__btn">
+                <button  class="cookies__btn-pink">
                     Accept
                 </button>
                 
                 <button  class="cookies__btn">
                     Decline
                 </button>
-
+                
+                <img src="img/close.png" alt="" class="cookies__close  ">
             </div>
+          </div>
             
         </div>
-        
-    </div>
+     
 
-    <div class="modal hide">
-        <form action="" class="modal__form">
-            <img src="img/close.png" alt="" class="modal__close">
-            <label for="" class="modal__label">Имя <span class="modal__required">*</span> </label>
-            <input type="text" class="modal__name modal__input" placeholder="Enter name" required>
+
+    <div style="display: none" class="modal ">
+        <form  class="modal__form">
+            <img onclick="closeContact()" src="img/close.png" alt="" class="modal__close">
+            <label for="name" class="modal__label">Имя <span class="modal__required">*</span> </label>
+            <input id="name" name="name" type="text" class="modal__name modal__input" placeholder="Enter name" >
 
             <label for="" class="modal__label">Email<span class="modal__required">*</span></label>
-            <input type="text" class="modal__mail modal__input" placeholder="Enter email " required>
-
+            <input id="email" type="text" class="modal__mail modal__input" placeholder="Enter email " >
+             
             <label for="" class="modal__label">Phone number<span class="modal__required">*</span></label>
-            <input type="text" class="modal__phone modal__input" placeholder="+1 900 000 00 00 " required>
+            <input id="phone" type="text" class="modal__phone modal__input" placeholder="+1 900 000 00 00 " >
 
             <label for="" class="modal__label">Company</label>
             <input type="text" class="modal__company modal__input" placeholder="Enter company" >
@@ -49,8 +52,18 @@
             <p class="modal__text">
                 By submitting this form you are agreeing to Budss’s <a href="" class="modal__link">Privacy Policy</a> and <a href="" class="modal__link">Terms of Use</a> 
             </p>
-            <button type="submit" class="contact__btn modal__btn">Contact Sales</button>
+            <button type="button" onclick="submitForm()" class="modal__btn">Contact Sales</button>
         </form>
+    </div>
+
+    <div style="display: none" class="thank ">
+        <div class="thank__content">    
+            <img src="img/close.png" onclick="closeThank()" alt="" class="thank__close">
+            <img src="img/thank.png" alt="" class="thank__img">
+            <span class="thank__grad">Thank You!</span>
+            <p class="thank__tex">Thank you, we have received your application and will contact you soon!</p>
+            <button onclick="closeThank()"  class="thank__btn ">Super!</button>
+        </div>
     </div>
 
     <header>
@@ -64,7 +77,7 @@
         </div>
 
     </header>
-
+ 
     <main>
         <section class="hero">
     
@@ -73,9 +86,21 @@
                     <a href="" class="hero__logo"> <img  src="img/logo.png" alt="Logo">
                     </a>
                     <button class="hero__button contact__btn">Contact sales</button>
+                    <div class="menu">
+                        <div class="menu-toggle">
+                        
+                        </div>
+                        <ul class="menu-list">
+                          <li><a href="">For Business</a></li>
+                          <li><a href="">For Customersб</a></li>
+                          <li><a href="">Privacy Policy</a></li>
+                          <li><a href="">Terms Of Use - Seller</a></li>
+                          <li><a href="">Terms of Use - Sellers & Customers</a></li>
+                        </ul>
+                      </div> 
                 </div>
                 </div>
-               <div class="hero__container">
+               <!-- <div class="hero__container">
                 <div class="hero__bottom">
                     
                     <div class="hero__content">
@@ -91,10 +116,11 @@
     
                
             </div>
-               </div>
+               </div> -->
 
         </section>
-       <section class="about">
+           <!--
+    <section class="about">
    <div class="about__container ">
     <h2 class="about__title">About Budss</h2>
     <div class="about__wrap">
@@ -132,6 +158,31 @@
        </section>
        
         <section class="how">
+           <div class="hero__container">
+            <div class="carousel">
+                <div class="carousel-container">
+                   <div class="caruousel__row">
+                    <span class="carousel__item">How Budss Works</span>
+                    <span class="carousel__item carouesel__item-black">How Budss Works</span>
+
+                   </div>
+                   <div  class="caruousel__row">
+                    <span class="carousel__item carouesel__item-black">How Budss Works</span>
+                    <span class="carousel__item">How Budss Works</span>
+
+                   </div>
+                   <div class="caruousel__row">
+                    <span class="carousel__item">How Budss Works</span>
+                    <span class="carousel__item carouesel__item-black">How Budss Works</span>
+
+
+                   </div>
+
+                    
+                </div>
+              </div>
+              
+           </div>
             <img src="img/phone.png" alt="" class="how__phone">
     
         </section>
@@ -163,18 +214,29 @@
             <p class="why__description">We Provide Advanced Payment Solutions </p>
                 <p class="why__incline--text">To Grow Your Business</p>
             <div class="why__items">
-                <div class="why__item">
-                    <img src="img/why1.png" alt="" class="why__image">
-                    <p class="why__image">Turn your customers into loyal influencers</p>
+                <div style="background-image: url(img/why1.png);width:733px;  " class="why__item">
+                    <div class="why__content">
+                        <h4 class="why__item-title">Turn your customers into loyal influencers</h4>
+                    <p class="why__item-text">Budss helps businesses harness the exponential power of loyal customers for acquisition and retention.</p>
+                    </div>
                 </div>
-                <div class="why__item">
-                    <img src="img/why2.png" alt="" class="why__image">
+                <div style="background-image: url(img/why2.png);width:547px;  " class="why__item">
+                    <div class="why__content">
+                        <h4 class="why__item-title">Harness the power of buying in bulk</h4>
+                    <p class="why__item-text">Get at least 2X more sales with Budss Buying Groups. Your customer base will grow exponentially as your customers add their friends & family to your personalized group..</p>
+                    </div>                
                 </div>
-                <div class="why__item">
-                    <img src="img/why3.png" alt="" class="why__image">
+                <div style="background-image: url(img/why3.png);width:547px;  " class="why__item">
+                    <div class="why__content">
+                        <h4 class="why__item-title">Supercharge <br> Loyalty With Instant Cash Back</h4>
+                    <p class="why__item-text">Budss allows for shoppers to earn immediate cash back at their favorite stores.</p>
+                    </div>                
                 </div>
-                <div class="why__item">
-                    <img src="img/why4.png" alt="" class="why__image">
+                <div style="background-image: url(img/why4.png);width:733px;  " class="why__item">
+                    <div class="why__content">
+                        <h4 class="why__item-title">Seasoned with AI and Gamification</h4>
+                    <p class="why__item-text">AI programming creates a personalized customer journey, offering recommendations for their next purchase and optimizing rewards for after purchase.</p>
+                    </div>                
                 </div>
             </div>
 
@@ -249,7 +311,7 @@
             </section>
         </div>
 
-    </footer>
-    
+    </footer> -->
+    <script src="js/index.js"></script>
 </body>
 </html>
