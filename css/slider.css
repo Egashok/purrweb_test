@@ -34,7 +34,7 @@ margin-top: 30px;
 .slider__items{
     display: flex;
     position: relative;
-    left: 0px;
+    left: -400px;
 }
 .active{
     background-color: red;
@@ -43,6 +43,5 @@ margin-top: 30px;
     display: flex;
     width: 400px;
 margin: 0 auto;
-
-
+overflow: hidden;
 }
