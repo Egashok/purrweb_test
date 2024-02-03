@@ -80,9 +80,21 @@ function validateForm() {
   
 }
 
+
 const menuToggle = document.querySelector('.menu-toggle');
 const menuList = document.querySelector('.menu-list');
+const menu = document.querySelector('.menu');
+const close = document.querySelector('.menu__close');
 
 menuToggle.addEventListener('click', () => {
   menuList.classList.toggle('open');
+  menu.classList.toggle('open');
+  close.style.display="block"
+});
+
+close.addEventListener('click', () => {
+  menuList.classList.toggle('open');
+  menu.classList.toggle('open');
+  close.style.display="none"
+
 });
