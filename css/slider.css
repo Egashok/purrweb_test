@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    max-width: 1440px;
+    text-align: center;
+    margin: 0 auto;
+}
+.slider__dot{
+    width: 25px;
+    height: 25px;
+    background-color: orange;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.slider__dots{
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+.slider__item{
+    width: 400px;
+    height: 400px;
+}
+.slider__btn{
+display: inline-block;
+vertical-align: middle;
+margin-top: 30px;
+}
+.slider__items{
+    display: flex;
+    position: relative;
+    left: -400px;
+}
+.active{
+    background-color: red;
+}
+.slider__screen{
+    display: flex;
+    width: 400px;
+    outline: 15px solid red;
+margin: 0 auto;
+}
