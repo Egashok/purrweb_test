@@ -12,12 +12,13 @@
     height: 25px;
     background-color: orange;
     border-radius: 50%;
+    margin-right: 10px;
 
 }
 .slider__dots{
     max-width: 500px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 0 auto;
     margin-top: 50px;
 
@@ -34,7 +35,7 @@ margin-top: 30px;
 .slider__items{
     display: flex;
     position: relative;
-    left: 0px;
+    left: -400px;
 }
 .active{
     background-color: red;
@@ -42,7 +43,6 @@ margin-top: 30px;
 .slider__screen{
     display: flex;
     width: 400px;
+    outline: 15px solid red;
 margin: 0 auto;
-
-
 }
