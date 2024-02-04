@@ -2197,22 +2197,10 @@ button.valid {
   background-color: #800080; /* фиолетовый цвет при заполненных полях */
 }
 
-.fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #181818;
-  color: #FFFFFF;
-  padding: 10px 0;
-  text-align: center;
-  margin: 0;
-  z-index: 12;
-  width: 100%;
-}
 .fixed__container {
   padding: 0 60px;
   z-index: 12;
-  width: 100%;
+  width: 1320px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2224,4 +2212,24 @@ button.valid {
   .fixed__container {
     padding: 0 16px;
   }
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #181818;
+  color: #FFFFFF;
+  padding: 10px 0;
+  text-align: center;
+  margin: 0;
+  z-index: 12;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
