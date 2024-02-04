@@ -1,7 +1,7 @@
 @import "_mixins/font-face";
 
-@include font-face("Outfit", "../fonts/Outfit-Light/Outfit-Light",300);
-@include font-face("Outfit", "../fonts/Outfit-Regular/Outfit-Regular",400);
-@include font-face("Outfit", "../fonts/Outfit-Medium/Outfit-Medium",500);
-@include font-face("Outfit", "../fonts/Outfit-Semibold/Outfit-Semibold",600);
-@include font-face("Outfit", "../fonts/Outfit-Bold/Outfit-Bold", 700);
+@include font-face("Outfit", "../../fonts/Outfit-Light/Outfit-Light",300);
+@include font-face("Outfit", "../../fonts/Outfit-Regular/Outfit-Regular",400);
+@include font-face("Outfit", "../../fonts/Outfit-Medium/Outfit-Medium",500);
+@include font-face("Outfit", "../../fonts/Outfit-Semibold/Outfit-Semibold",600);
+@include font-face("Outfit", "../../fonts/Outfit-Bold/Outfit-Bold", 700);
