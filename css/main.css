@@ -1803,7 +1803,7 @@ header {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 0px;
-    top: 65%;
+    top: 60%;
   }
 }
 @media (max-width: 740px) {
@@ -1823,7 +1823,7 @@ header {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 0px;
-    top: 55%;
+    top: 35%;
   }
 }
 .cookies__text {
